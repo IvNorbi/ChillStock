@@ -1,0 +1,19 @@
+﻿<Window x:Class="IN_bemutato.ModifyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Modify Item" Height="300" Width="400">
+    <Grid>
+        <StackPanel Margin="10">
+            <Label Content="Name/Type:"/>
+            <TextBox x:Name="NameTextBox" Width="200"/>
+            <Label Content="Stock:"/>
+            <TextBox x:Name="StockTextBox" Width="200"/>
+            <Label Content="Last Arrival:"/>
+            <TextBox x:Name="LastArrivalTextBox" Width="200"/>
+            <Label Content="Price per Kg:"/>
+            <TextBox x:Name="PricePerKgTextBox" Width="200"/>
+            <Button Content="Mentés" Click="SaveButton_Click" Width="100" Margin="0,10,0,0"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

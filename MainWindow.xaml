@@ -1,0 +1,45 @@
+﻿<Window x:Class="IN_bemutato.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Meat and Customer List" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- Gombok és keresőmező -->
+            <RowDefinition Height="*" />
+            <!-- DataGrid -->
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10" Grid.Row="0">
+            <ComboBox x:Name="FilterComboBox" Width="120" Margin="0,0,10,0">
+                <ComboBoxItem Content="All" />
+                <ComboBoxItem Content="Customers" />
+                <ComboBoxItem Content="Meats" />
+            </ComboBox>
+
+            <TextBox x:Name="SearchBox" Width="200" Margin="0,0,10,0" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus"/>
+            <TextBlock x:Name="PlaceholderText" Text="Search..." Foreground="Gray" VerticalAlignment="Center" Margin="0,0,10,0"/>
+
+            <Button Content="Keresés" Click="OnSearchClick" Width="100" Margin="0,0,10,0"/>
+            <Button Content="Listáz" Click="OnListazClick" Width="100" Margin="0,0,10,0"/>
+            <Button Content="Módosítás" Click="OnModifyClick" Width="100" Margin="0,0,10,0"/>
+            <Button Content="Törlés" Click="OnDeleteClick" Width="100" Margin="0,0,10,0"/>
+
+        </StackPanel>
+
+        <DataGrid x:Name="ResultsDataGrid" AutoGenerateColumns="False" Margin="10" Grid.Row="1"
+          SelectionMode="Single" SelectionChanged="ResultsDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding CustomerId}" Width="50"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding CustomerName}" Width="200"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="200"/>
+                <DataGridTextColumn Header="Contact Number" Binding="{Binding ContactNumber}" Width="100"/>
+                <DataGridTextColumn Header="Last Order Date" Binding="{Binding LastOrderDate}" Width="150"/>
+                <DataGridTextColumn Header="Total Orders" Binding="{Binding TotalOrders}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
+
+
